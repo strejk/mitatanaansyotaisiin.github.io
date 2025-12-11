@@ -1,0 +1,562 @@
+/* ---------------------------------------------------
+   FONTIT & PERUSASETUKSET
+------------------------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap');
+
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 2rem;
+    color: #1f1f1f;
+    font-size: 0.9rem;
+}
+
+h1 {
+    font-family: "Quicksand", sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 20vh;
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+
+.hat-logo {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hat-logo svg {
+    display: block;
+}
+
+
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #1d1e2c;
+    font-weight: 600;
+}
+
+
+h2,
+.recipe-title,
+#shoppingAccordion summary {
+    font-family: "Quicksand", sans-serif;
+}
+
+
+h3 {
+    font-size: 1.1rem;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+
+
+/* ---------------------------------------------------
+   KORTIT
+------------------------------------------------------ */
+
+.card {
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 0 auto 1.5rem;
+    width: 700px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* ---------------------------------------------------
+   PÄÄRAAKA-AINEVALINNAT
+------------------------------------------------------ */
+
+.main-ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    max-width: 520px;
+}
+
+.main-ingredients-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #1d1e2c;
+    margin-bottom: 0.5rem;
+}
+
+
+.main-ingredients label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    padding: 0.55rem 1rem;
+    border-radius: 24px;
+
+    background: #f7f8fb;
+    border: 2px solid #dde1ea;
+    color: #333;
+
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-weight: 600;
+}
+
+.main-ingredients label:hover {
+    border-color: #C47A8C;
+    background: #F8E5EB;
+}
+
+.main-ingredients input {
+    display: none;
+}
+
+.main-ingredients input:checked+span {
+    font-weight: 600;
+    color: #C47A8C;
+}
+
+.main-ingredients label.selected {
+    background: #F8E5EB;
+    border-color: #C47A8C;
+    color: #F8E5EB;
+    font-weight: 600;
+}
+
+
+.ingredient-icon {
+    font-size: 1.15rem;
+}
+
+
+
+/* ---------------------------------------------------
+   NAPIT & SELECTIT
+------------------------------------------------------ */
+
+button,
+select {
+    padding: 0.6rem 1rem;
+    border-radius: 14px;
+    border: 1px solid #e2e4e7;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: "Inter", sans-serif;
+}
+
+button {
+    background: #C47A8C;
+    color: #fff;
+    border: none;
+    font-weight: 500;
+}
+
+button:hover {
+    background: #AF6A7A;
+}
+
+
+
+/* ---------------------------------------------------
+   TAULUKOT (yleiskatsaus + ostoslista)
+------------------------------------------------------ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+th,
+td {
+    padding: 6px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+th {
+    background: #fff;
+    color: #1d1e2c;
+    font-weight: 600;
+    border-bottom: 2px solid #C47A8C;
+}
+
+
+
+#overviewCard table th:nth-child(1),
+#overviewCard table td:nth-child(1) {
+    width: 25%;
+}
+
+#overviewCard table th:nth-child(2),
+#overviewCard table td:nth-child(2) {
+    width: 65%;
+}
+
+#overviewCard table th:nth-child(3),
+#overviewCard table td:nth-child(3) {
+    width: 10%;
+    text-align: right;
+}
+
+
+#overviewCard table tr.active {
+    background: rgba(196, 122, 140, 0.15);
+    font-weight: 600;
+}
+
+#overviewCard table tr:hover {
+    background: rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+}
+
+
+
+/* ---------------------------------------------------
+   INTROKORTTI
+------------------------------------------------------ */
+
+.card:first-of-type {
+    margin-top: 6vh;
+    background: linear-gradient(135deg,
+            #fdf5f6 0%,
+            #f4edf3 40%,
+            #ecebf2 100%);
+    border: 1px solid rgba(196, 122, 140, 0.25);
+    border-radius: 20px;
+
+    padding: 2.2rem 2.5rem;
+    max-width: 720px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    gap: 1.4rem;
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.10),
+        0 18px 38px rgba(0, 0, 0, 0.08);
+
+
+}
+
+
+/* ---------------------------------------------------
+   RESEPTIKORTTI
+------------------------------------------------------ */
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.recipe-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+.recipe-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+
+.recipe-image img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    max-height: 250px;
+}
+
+
+.recipe-ingredients h4 {
+    margin-top: 0;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    color: #59656f;
+}
+
+.recipe-ingredients ul {
+    padding-left: 1.1rem;
+    margin: 0.3rem 0 0.8rem;
+}
+
+.recipe-instructions h4 {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+    color: #59656f;
+}
+
+.recipe-instructions p {
+    line-height: 1.45;
+}
+
+/* ---------------------------------------------------
+   OSTOSLISTA + DROPDOWN
+------------------------------------------------------ */
+
+.shopping-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+#shoppingAccordion summary {
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+    color: #1d1e2c !important;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+#shoppingList h3 {
+    background: #fff;
+    color: #1d1e2c;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 6px;
+    margin: 1.2rem 0 0;
+    border-bottom: 2px solid #C47A8C;
+}
+
+#shoppingList table {
+    margin-top: 0;
+}
+
+
+
+.day-dropdown {
+    position: relative;
+    width: 300px;
+}
+
+.day-dropdown-toggle {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 2.2rem 0.5rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid #e2e4e7;
+    background: #fff;
+    cursor: pointer;
+    color: #1f1f1f;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.day-dropdown-toggle::after {
+    content: "";
+    position: absolute;
+    right: 0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url("chevron-down.svg") center/contain no-repeat;
+}
+
+.day-dropdown.open .day-dropdown-toggle::after {
+    background-image: url("chevron-up.svg");
+}
+
+.day-dropdown-menu {
+    display: none;
+    position: absolute;
+    background: #fff;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 0.25rem;
+    border: 1px solid #e2e4e7;
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 20;
+}
+
+.day-dropdown.open .day-dropdown-menu {
+    display: block;
+}
+
+.day-dropdown-menu label {
+    display: block;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+#shoppingList table td:first-child,
+#shoppingList table th:first-child {
+    width: 70%;
+}
+
+#shoppingList table td:last-child,
+#shoppingList table th:last-child {
+    width: 30%;
+    text-align: right;
+}
+
+.shopping-summary .chevron {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: inline-block;
+}
+
+
+/* ---------------------------------------------------
+   VEGE-SLIDER
+------------------------------------------------------ */
+
+.vege-slider-wrapper label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.vege-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#vegeDaysSlider {
+    width: 200px;
+    appearance: none;
+    height: 6px;
+    border-radius: 4px;
+    background: #d0d4db;
+    cursor: pointer;
+}
+
+#vegeDaysSlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #C47A8C;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#vegeDaysValue {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #C47A8C;
+}
+
+.vege-slider-wrapper {
+    margin-top: 0.8rem;
+    text-align: center;
+}
+
+.vege-slider-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-top: 0.4rem;
+}
+
+
+/* ---------------------------------------------------
+   PRINT LAYOUT
+------------------------------------------------------ */
+#printAllRecipes {
+    position: absolute;
+    top: -99999px;
+    left: 0;
+    width: 100%;
+}
+
+
+@media print {
+
+
+    body * {
+        display: none !important;
+    }
+
+
+    #printAllRecipes,
+    #printAllRecipes * {
+        display: block !important;
+        position: static !important;
+        visibility: visible !important;
+        color: #000;
+    }
+
+
+    #printAllRecipes img {
+        display: none !important;
+    }
+
+
+    #printAllRecipes h2 {
+        font-size: 1.4rem;
+        font-family: "Quicksand", sans-serif;
+        margin-top: 1rem;
+    }
+
+    #printAllRecipes h3 {
+        font-size: 1.2rem;
+        font-family: "Quicksand", sans-serif;
+        margin: 0.3rem 0 0.6rem;
+    }
+
+    #printAllRecipes h4 {
+        margin-top: 0.6rem;
+        font-size: 1rem;
+    }
+
+    #printAllRecipes ul {
+        margin: 0.3rem 0 1rem;
+        padding-left: 1.2rem;
+    }
+
+    #printAllRecipes hr {
+        margin: 1.5rem 0;
+        border: none;
+        border-bottom: 1px solid #aaa;
+    }
+
+    .print-recipe {
+        page-break-after: always;
+    }
+}

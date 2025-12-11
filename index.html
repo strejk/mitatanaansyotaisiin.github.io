@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mitä tänään syötäisiin?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+ <h1>
+  Mitä tänään syötäisiin?
+  <img src="chef-hat-minimalistic.svg" alt="kokinhattu" class="hat-logo">
+</h1>
+
+
+
+  <div class="card show">
+    <p class="main-ingredients-title">Valitse pääruoka-aineet</p>
+
+    <div class="main-ingredients">
+
+      <label>
+  <input type="checkbox" value="nauta">
+  <span><span class="ingredient-icon">🐄</span> Nauta</span>
+</label>
+
+<label>
+  <input type="checkbox" value="sika">
+  <span><span class="ingredient-icon">🐖</span> Sika</span>
+</label>
+
+<label>
+  <input type="checkbox" value="kana">
+  <span><span class="ingredient-icon">🐔</span> Kana</span>
+</label>
+
+<label>
+  <input type="checkbox" value="kala">
+  <span><span class="ingredient-icon">🐟</span> Kala</span>
+</label>
+
+<label>
+  <input type="checkbox" value="tofu">
+  <span><span class="ingredient-icon">🧊</span> Tofu</span>
+</label>
+
+<label>
+  <input type="checkbox" value="kasvis">
+  <span><span class="ingredient-icon">🥦</span> Kasvis</span>
+</label>
+
+
+    </div>
+
+
+<div class="vege-slider-wrapper">
+  <label for="vegeDaysSlider">Vegepäivien määrä:</label>
+  <div class="vege-slider-row">
+    <input type="range" id="vegeDaysSlider" min="0" max="7" value="0">
+    <span id="vegeDaysValue">0</span>
+  </div>
+</div>
+
+
+    <br>
+    <button onclick="generateMealPlan()">Luo ruokalista</button>
+  </div>
+
+  <div id="overviewSection" class="card">
+    <h2>Ruokalista</h2>
+    <div id="overviewCard"></div>
+  </div>
+
+  <div id="mealSection" class="card">
+    <h2>Reseptikortti</h2>
+    <div id="mealPlan"></div>
+  </div>
+
+  <div id="printAllRecipes" style="display:none;"></div>
+
+
+   <div id="shoppingSection" class="card">
+    <details id="shoppingAccordion">
+      <summary class="shopping-summary">
+        Ostoslista
+        <img class="chevron" src="chevron-down.svg" alt="">
+      </summary>
+
+      <div id="shoppingList" style="margin-top: 1rem;"></div>
+    </details>
+  </div>
+
+  <script src="categories.js" defer></script>
+  <script src="recipes.js" defer></script>
+  <script src="main.js" defer></script>
+
+
+<div id="printAllRecipes">
+    <div id="printRecipes"></div>
+    <div id="printShopping"></div>
+</div>
+
+
+</body>
+
+</html>
